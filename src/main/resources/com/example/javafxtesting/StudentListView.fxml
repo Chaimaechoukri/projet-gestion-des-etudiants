@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentController">
+    <TableView fx:id="studentTable">
+        <columns>
+            <TableColumn text="Student ID" fx:id="studentIdColumn">
+                <cellValueFactory>
+                    <PropertyValueFactory property="studentId"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="First Name" fx:id="firstNameColumn">
+                <cellValueFactory>
+                    <PropertyValueFactory property="firstName"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Last Name" fx:id="lastNameColumn">
+                <cellValueFactory>
+                    <PropertyValueFactory property="lastName"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Date of Birth" fx:id="dateOfBirthColumn">
+                <cellValueFactory>
+                    <PropertyValueFactory property="dateOfBirth"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Class Name" fx:id="classNameColumn">
+                <cellValueFactory>
+                    <PropertyValueFactory property="classInfo.className"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Photo URL" fx:id="photoUrlColumn">
+                <cellValueFactory>
+                    <PropertyValueFactory property="photoUrl"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+</VBox>

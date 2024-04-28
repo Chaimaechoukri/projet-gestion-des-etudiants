@@ -1,0 +1,48 @@
+.root {
+  -fx-font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+.title-text {
+  -fx-font-size: 24px;
+  -fx-font-weight: bold;
+  -fx-fill: #333; /* Replace with your actual color */
+}
+
+.login-button {
+  -fx-background-color: #FFA500; /* Replace with your button color */
+  -fx-text-fill: #FFFFFF;
+  -fx-font-weight: bold;
+  -fx-padding: 10 20;
+  -fx-border-radius: 5;
+  -fx-background-radius: 5;
+  -fx-min-width: 100px;
+}
+
+.text-field {
+  -fx-padding: 10;
+  -fx-border-color: #CCCCCC; /* Replace with the color of the border */
+  -fx-border-radius: 5;
+  -fx-background-radius: 5;
+}
+
+.link-text {
+  -fx-font-size: 12px;
+  -fx-underline: true;
+  -fx-text-fill: #0000EE; /* Hyperlink color */
+}
+
+/* Additional styles for layout */
+.hbox {
+  -fx-alignment: center-left;
+}
+
+.vbox {
+  -fx-alignment: center;
+  -fx-spacing: 15;
+}
+
+/* Styles for the logo image view */
+#logo {
+  -fx-preserve-ratio: true;
+  -fx-fit-width: 100; /* Adjust as needed */
+}
