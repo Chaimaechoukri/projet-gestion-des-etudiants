@@ -35,12 +35,13 @@ public class LoginController {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
+
         if (userDAO.authenticate(username, password)) {
             System.out.println("Login successful");
-            FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("StudentListView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/javafxtesting/professeur.fxml"));
             Parent root = loader.load();
-            Scene scene = new Scene(root);
             Stage stage = new Stage();
+            Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         } else {
@@ -58,7 +59,6 @@ public class LoginController {
         alert.setContentText(message);
         alert.showAndWait();
     }
-
     public void showRegisterStage(MouseEvent mouseEvent) {
     }
 }

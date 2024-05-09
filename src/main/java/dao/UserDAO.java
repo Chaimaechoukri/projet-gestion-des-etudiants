@@ -1,4 +1,5 @@
 package dao;
+import database.MySQLConnector;
 import utils.DatabaseUtil;
 import utils.PasswordHashingUtil;
 
@@ -8,6 +9,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserDAO {
+
+    private MySQLConnector Database;
 
     public boolean authenticate(String username, String password) {
         String query = "SELECT password FROM users WHERE username = ?";
@@ -25,4 +28,6 @@ public class UserDAO {
         }
         return false;
     }
-}
+
+    }
+

@@ -16,8 +16,9 @@
 
 
 -- Listage de la structure de la base pour test
-CREATE DATABASE IF NOT EXISTS `test` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE IF NOT EXISTS `test` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `test`;
+
 
 -- Listage de la structure de table test. annual_grades
 CREATE TABLE IF NOT EXISTS `annual_grades` (
@@ -28,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `annual_grades` (
   PRIMARY KEY (`annual_grade_id`),
   KEY `student_id` (`student_id`),
   CONSTRAINT `annual_grades_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Les données exportées n'étaient pas sélectionnées.
 
@@ -38,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `classes` (
   `class_name` varchar(50) NOT NULL,
   `class_level` varchar(50) NOT NULL,
   PRIMARY KEY (`class_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Les données exportées n'étaient pas sélectionnées.
 
@@ -50,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `education_levels` (
   PRIMARY KEY (`education_level_id`),
   UNIQUE KEY `student_id` (`student_id`),
   CONSTRAINT `education_levels_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Les données exportées n'étaient pas sélectionnées.
 
@@ -63,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `exams` (
   PRIMARY KEY (`exam_id`),
   KEY `module_id` (`module_id`),
   CONSTRAINT `exams_ibfk_1` FOREIGN KEY (`module_id`) REFERENCES `modules` (`module_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Les données exportées n'étaient pas sélectionnées.
 
@@ -78,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `exam_grades` (
   KEY `student_id` (`student_id`),
   CONSTRAINT `exam_grades_ibfk_1` FOREIGN KEY (`exam_id`) REFERENCES `exams` (`exam_id`),
   CONSTRAINT `exam_grades_ibfk_2` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Les données exportées n'étaient pas sélectionnées.
 
@@ -93,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `grades` (
   KEY `subject_id` (`subject_id`),
   CONSTRAINT `grades_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`),
   CONSTRAINT `grades_ibfk_2` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`subject_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Les données exportées n'étaient pas sélectionnées.
 
@@ -105,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `modules` (
   PRIMARY KEY (`module_id`),
   KEY `class_id` (`class_id`),
   CONSTRAINT `modules_ibfk_1` FOREIGN KEY (`class_id`) REFERENCES `classes` (`class_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Les données exportées n'étaient pas sélectionnées.
 
@@ -115,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
   `role_name` varchar(50) NOT NULL,
   PRIMARY KEY (`role_id`),
   UNIQUE KEY `role_name` (`role_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE= utf8mb4_general_ci;
 
 -- Les données exportées n'étaient pas sélectionnées.
 
@@ -129,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `semester_grades` (
   PRIMARY KEY (`semester_grade_id`),
   KEY `student_id` (`student_id`),
   CONSTRAINT `semester_grades_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Les données exportées n'étaient pas sélectionnées.
 
@@ -144,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `students` (
   PRIMARY KEY (`student_id`),
   KEY `class_id` (`class_id`),
   CONSTRAINT `students_ibfk_1` FOREIGN KEY (`class_id`) REFERENCES `classes` (`class_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Les données exportées n'étaient pas sélectionnées.
 
@@ -156,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `subjects` (
   PRIMARY KEY (`subject_id`),
   KEY `class_id` (`class_id`),
   CONSTRAINT `subjects_ibfk_1` FOREIGN KEY (`class_id`) REFERENCES `classes` (`class_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Les données exportées n'étaient pas sélectionnées.
 
@@ -170,7 +171,27 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `username` (`username`),
   KEY `role_id` (`role_id`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE= utf8mb4_general_ci;
+
+
+/* ///////////// faty ////////////////// */
+
+CREATE TABLE IF NOT EXISTS professors (
+  professor_id int NOT NULL AUTO_INCREMENT,
+  first_name varchar(50) NOT NULL,
+  last_name varchar(50) NOT NULL,
+  PRIMARY KEY (professor_id)
+);
+
+
+CREATE TABLE IF NOT EXISTS professor_subject (
+ professor_id int NOT NULL,
+ subject_id int NOT NULL,
+ PRIMARY KEY (professor_id, subject_id),
+ FOREIGN KEY (professor_id) REFERENCES professors(professor_id),
+ FOREIGN KEY (subject_id) REFERENCES subjects(subject_id)
+);
+
 
 -- Les données exportées n'étaient pas sélectionnées.
 

@@ -121,7 +121,18 @@
             <artifactId>jbcrypt</artifactId>
             <version>0.3m</version>
         </dependency>
+
+        <!-- Autres dépendances  faty-->
+        <dependency>
+            <groupId>com.gluonhq</groupId>
+            <artifactId>charm-glisten</artifactId>
+            <version>5.0.0</version>
+        </dependency>
     </dependencies>
+
+
+
+
 
     <build>
         <plugins>
