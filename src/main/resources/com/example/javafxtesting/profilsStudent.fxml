@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Student.ProfileStudent">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane prefHeight="400.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="semi-top-form" stylesheets="@profile.css" BorderPane.alignment="CENTER">
+                     <AnchorPane layoutX="-14.0" layoutY="24.0" prefHeight="369.6" prefWidth="200.0" styleClass="nav-form" stylesheets="@profile.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <children>
+                           <Label fx:id="Welcome" layoutX="38.0" layoutY="37.0" text="Welcome" textFill="#e3ebf2">
+                              <font>
+                                 <Font name="Tahoma Bold" size="24.0" />
+                              </font>
+                           </Label>
+                           <Line endX="88.19999694824219" endY="-7.62939453125E-6" layoutX="83.0" layoutY="93.0" startX="-59.70000076293945" startY="-7.62939453125E-6" stroke="#ece2e2" />
+                           <Button layoutX="32.0" layoutY="152.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="134.0" styleClass="nav-btn" stylesheets="@profile.css" text="Profils">
+                              <textFill>
+                                 <LinearGradient endX="1.0" endY="1.0">
+                                    <stops>
+                                       <Stop>
+                                          <color>
+                                             <Color red="0.3048732876777649" green="0.5856660008430481" blue="0.7157894968986511" opacity="0.8700000047683716" />
+                                          </color>
+                                       </Stop>
+                                       <Stop offset="1.0">
+                                          <color>
+                                             <Color red="1.0" green="1.0" blue="1.0" />
+                                          </color>
+                                       </Stop>
+                                    </stops>
+                                 </LinearGradient>
+                              </textFill></Button>
+                           <Button fx:id="NotesStudentButton" layoutX="32.0" layoutY="208.0" mnemonicParsing="false" onAction="#NotesStudentOnActionP" prefHeight="30.0" prefWidth="134.0" styleClass="nav-btn" stylesheets="@profile.css" text="Notes" textFill="#7bc4c9" />
+                           <Button fx:id="Sortie" layoutX="30.0" layoutY="286.0" mnemonicParsing="false" onAction="#SeconnecteOnAction" prefHeight="30.0" prefWidth="134.0" styleClass="nav-btn" stylesheets="@profile.css" text="Se connecte" AnchorPane.bottomAnchor="20.0" />
+                        </children>
+                     </AnchorPane>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="14.399999618530273" layoutY="14.399999618530273" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                           <children>
+                              <AnchorPane prefHeight="374.0" prefWidth="566.0" styleClass="white-bg" stylesheets="@profile.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                                 <children>
+                                    <Button layoutX="278.0" layoutY="43.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="254.0" stylesheets="@profile.css" text="Imprimer l'attestation de scolarite" textFill="WHITE">
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Label fx:id="nameLabel" layoutX="27.0" layoutY="139.0" prefHeight="23.0" prefWidth="463.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="dobLabel" layoutX="27.0" layoutY="198.0" prefHeight="23.0" prefWidth="456.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="classLabel" layoutX="27.0" layoutY="255.0" prefHeight="23.0" prefWidth="507.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="34.0" layoutY="319.0" prefHeight="23.0" prefWidth="423.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="profile_form" layoutX="161.0" layoutY="114.0" prefHeight="400.8" prefWidth="600.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                           <children>
+                              <ImageView fitHeight="96.0" fitWidth="150.0" layoutX="35.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Image/etudiant-diplome.png" />
+                                 </image>
+                              </ImageView>
+                           </children></AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

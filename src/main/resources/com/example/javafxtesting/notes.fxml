@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Student.ProfileStudent">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane prefHeight="400.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="369.6" prefWidth="200.0" styleClass="nav-form" stylesheets="@profile.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="Welcome" layoutX="40.0" layoutY="46.0" text="Welcome" textFill="#f1f6f7">
+                           <font>
+                              <Font name="Tahoma Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Line endX="88.19999694824219" endY="-7.62939453125E-6" layoutX="85.0" layoutY="102.0" startX="-59.70000076293945" startY="-7.62939453125E-6" stroke="#ece2e2" />
+                        <Button fx:id="ProfilsStudentBoutton" layoutX="34.0" layoutY="161.0" mnemonicParsing="false" onAction="#ProfilsStudentOnAction" prefHeight="30.0" prefWidth="134.0" styleClass="nav-btn" stylesheets="@profile.css" text="Profils" />
+                        <Button layoutX="34.0" layoutY="217.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="134.0" styleClass="nav-btn" stylesheets="@profile.css" text="Notes" />
+                        <Button fx:id="Sortie" layoutX="34.0" layoutY="321.0" mnemonicParsing="false" onAction="#SeconnecteOnAction" prefHeight="30.0" prefWidth="134.0" styleClass="nav-btn" stylesheets="@profile.css" text="Se connecte" />
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="10.0" layoutY="44.0" prefHeight="200.0" prefWidth="572.0" styleClass="white-bg" stylesheets="@profile.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                              <TableView layoutX="2.0" layoutY="84.0" prefHeight="200.0" prefWidth="572.0" stylesheets="@profile.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+                                <columns>
+                                  <TableColumn prefWidth="150.0" text="Année" />
+                                  <TableColumn prefWidth="120.0" text="Session" />
+                                    <TableColumn prefWidth="200.0" text="Modules" />
+                                    <TableColumn prefWidth="130.0" text="Notse" />
+                                </columns>
+                              </TableView>
+                              <Button layoutX="413.0" layoutY="30.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="170.0" stylesheets="@profile.css" text="Réleve des Notes" textFill="#fcfafa" AnchorPane.rightAnchor="10.0">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
