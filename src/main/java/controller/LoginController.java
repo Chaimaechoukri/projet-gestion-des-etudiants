@@ -37,7 +37,7 @@ public class LoginController {
 
         if (userDAO.authenticate(username, password)) {
             System.out.println("Login successful");
-            FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("StudentListView.fxml"));
+            FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("dirp.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             Stage stage = new Stage();

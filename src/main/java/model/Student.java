@@ -1,32 +1,46 @@
 package model;
 
-import java.time.LocalDate;
-
 public class Student {
-    private Integer studentId;
+    private int studentId;
     private String firstName;
     private String lastName;
-    private LocalDate dateOfBirth;
-    private Integer classId; // FK to Class
-    private String photoUrl;
-    private ClassInfo classInfo;
+    private double note;
+    private String className;
+    private String delibration; // Renommé de "deliberation" à "delibration"
+    private int noteId; // Ajout de l'identifiant de la note
+    private int subjectId; // Ajout de l'identifiant du sujet
 
-    public Student(Integer studentId, String firstName, String lastName, LocalDate dateOfBirth, Integer classId, String photoUrl, ClassInfo classInfo) {
-        this.studentId = studentId;
+    public Student(String firstName, String lastName, double note, String className) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
-        this.classId = classId;
-        this.photoUrl = photoUrl;
-        this.classInfo = classInfo;
+        this.note = note;
+        this.className = className;
+        this.delibration = determineDelibration(note);
     }
 
-    // Getters and Setters
-    public Integer getStudentId() {
+    private String determineDelibration(double note) {
+        if (note > 10) {
+            return "Validé";
+        } else if (note >= 7 ) {
+            return "Rattrapage";
+        } else {
+            return "Non validé";
+        }
+    }
+
+    public String getDelibration() {
+        return delibration;
+    }
+
+    public void setDelibration(String delibration) {
+        this.delibration = delibration;
+    }
+
+    public int getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(Integer studentId) {
+    public void setStudentId(int studentId) {
         this.studentId = studentId;
     }
 
@@ -46,35 +60,37 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
+    public double getNote() {
+        return note;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setNote(double note) {
+        this.note = note;
     }
 
-    public Integer getClassId() {
-        return classId;
+    public String getClassName() {
+        return className;
     }
 
-    public void setClassId(Integer classId) {
-        this.classId = classId;
+    public void setClassName(String className) {
+        this.className = className;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
+    public int getNoteId() {
+        return noteId;
     }
 
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
+    public void setNoteId(int noteId) {
+        this.noteId = noteId;
     }
 
-    public ClassInfo getClassInfo() {
-        return classInfo;
+    public int getSubjectId() {
+        return subjectId;
     }
 
-    public void setClassInfo(ClassInfo classInfo) {
-        this.classInfo = classInfo;
+    public void setSubjectId(int subjectId) {
+        this.subjectId = subjectId;
     }
+
+    // Getters and Setters for other fields
 }
