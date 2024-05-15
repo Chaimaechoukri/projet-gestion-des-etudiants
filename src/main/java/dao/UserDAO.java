@@ -41,4 +41,8 @@ public class UserDAO {
         }
         return -1;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> db87818aa894778e03f4e01251e9df14f6f16af3
