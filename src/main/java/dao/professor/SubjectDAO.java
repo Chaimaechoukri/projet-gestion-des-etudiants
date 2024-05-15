@@ -25,7 +25,6 @@ public class SubjectDAO {
                 // Préparer la requête SQL avec le paramètre pour le nom d'utilisateur
                 try (PreparedStatement statement = connection.prepareStatement(sql)) {
                     statement.setString(1, username);
-
                     // Exécuter la requête SQL
                     try (ResultSet resultSet = statement.executeQuery()) {
                         // Traiter les résultats de la requête

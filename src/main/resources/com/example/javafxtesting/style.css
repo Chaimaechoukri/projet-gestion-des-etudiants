@@ -79,32 +79,39 @@
 }
 
 .nav-form{
-  -fx-background-color:linear-gradient(to bottom right, #2d658c, #09cbea);
+  -fx-background-color: linear-gradient(to bottom right , #6182bd, #5ba68d);
 }
 .text-cole{
   -fx-highlight-text-fill: #ddd;
 }
+.text-cole1{
+  -fx-highlight-text-fill: #050505;
+}
 .nav-btn{
-  -fx-background-color:transparent;
   -fx-cursor:hand;
   -fx-text-fill:#fff;
   -fx-font-size:15px;
   -fx-font-family:"Arial";
   -fx-alignment:CENTER;
+  -fx-background-color: rgb(1, 75, 117);
+
 }
 .nav-btn:hover{
   -fx-background-color: rgba(170, 163, 163, 0.75);
 
 }
 
+
 .logout{
-  -fx-background-color: #089ebc;
+  -fx-background-color: #127867;
   -fx-background-radius:0px;
   -fx-cursor:hand;
+  -fx-text-fill:#fff;
+
 
 }
 .logout:hover{
-  -fx-background-color: #075e97;
+  -fx-background-color: #0dccab;
 
 }
 
@@ -192,9 +199,20 @@
 .add-btn:hover{
   -fx-background-color: #09cbea;
 }
+.add-btn1{
+  -fx-background-color: #023477;
+  -fx-background-radius:8px;
+  -fx-cursor:hand;
+  -fx-text-fill:#fff;
+  -fx-font-size:14px;
+  -fx-font-family:"Arial";
+}
+.add-btn1:hover{
+  -fx-background-color: #09cbea;
+}
 
 .update-btn{
-  -fx-background-color: #13aa66;
+  -fx-background-color: #054370;
   -fx-background-radius:8px;
   -fx-cursor:hand;
   -fx-text-fill:#fff;
@@ -205,6 +223,29 @@
   -fx-background-color: #1a6e49;
 }
 
+.updat-btn{
+  -fx-background-color: #067856;
+  -fx-background-radius:8px;
+  -fx-cursor:hand;
+  -fx-text-fill:#fff;
+  -fx-font-size:14px;
+  -fx-font-family:"Arial";
+}
+.updat-btn:hover{
+  -fx-background-color: #19b16d;
+}
+
+.sav-btn{
+  -fx-background-color: #4c0357;
+  -fx-background-radius:8px;
+  -fx-cursor:hand;
+  -fx-text-fill:#fff;
+  -fx-font-size:14px;
+  -fx-font-family:"Arial";
+}
+.sav-btn:hover{
+  -fx-background-color: #9117cd;
+}
 .delete-btn{
   -fx-background-color:#90242f;
   -fx-background-radius:8px;

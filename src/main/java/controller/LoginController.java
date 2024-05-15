@@ -1,6 +1,7 @@
 package controller;
 
 import com.example.javafxtesting.MainApp;
+import com.example.javafxtesting.ProfesseurController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,23 +31,40 @@ public class LoginController {
         this.userDAO = new UserDAO();
     }
 
+
     @FXML
     public void login() throws IOException {
         String username = usernameField.getText();
         String password = passwordField.getText();
-
-
-        if (userDAO.authenticate(username, password)) {
-            System.out.println("Login successful");
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/javafxtesting/professeur.fxml"));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+        if (username.isEmpty() || password.isEmpty()) {  // Fixed this line
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill all blank fields");
+            alert.showAndWait();
         } else {
-            System.out.println("Login failed: incorrect username or password");
-            showAlert("Error", "Incorrect username or password.");
+            if (userDAO.authenticate(username, password)) {
+                int role_id = userDAO.getRoleByUsername(username);
+                String xml = switch (role_id) {
+                    case 1 -> "StudentView.fxml";
+                    case 2 -> "AdminView.fxml";
+                    case 3 -> "professeur.fxml";
+                    case 4 -> "DirectorView.fxml";
+                    default -> "DefaultView.fxml";
+                };
+                System.out.println("Login successful");
+                System.out.println(xml);
+                FXMLLoader loader = new FXMLLoader(MainApp.class.getResource(xml));
+                Parent root = loader.load();
+                ProfesseurController professeurController = loader.getController();
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                System.out.println("Login failed: incorrect username or password");
+                showAlert("Error", "Incorrect username or password.");
+            }
         }
     }
 
@@ -59,6 +77,7 @@ public class LoginController {
         alert.setContentText(message);
         alert.showAndWait();
     }
+
     public void showRegisterStage(MouseEvent mouseEvent) {
     }
 }

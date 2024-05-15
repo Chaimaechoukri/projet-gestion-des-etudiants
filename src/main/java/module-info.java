@@ -11,6 +11,7 @@ module com.example.javafxtesting {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires java.sql;
+    requires java.desktop;
     opens model to javafx.fxml, javafx.base;
     opens com.example.javafxtesting to javafx.fxml;
     exports com.example.javafxtesting;

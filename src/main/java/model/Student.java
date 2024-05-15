@@ -1,6 +1,8 @@
 package model;
 
 import java.time.LocalDate;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public class Student {
     private Integer studentId;
@@ -10,6 +12,8 @@ public class Student {
     private Integer classId; // FK to Class
     private String photoUrl;
     private ClassInfo classInfo;
+    private final StringProperty note;
+
 
     public Student(Integer studentId, String firstName, String lastName, LocalDate dateOfBirth, Integer classId, String photoUrl, ClassInfo classInfo) {
         this.studentId = studentId;
@@ -19,10 +23,11 @@ public class Student {
         this.classId = classId;
         this.photoUrl = photoUrl;
         this.classInfo = classInfo;
+        this.note = new SimpleStringProperty();
     }
 
     // Getters and Setters
-    public Integer getStudentId() {
+    public  Integer getStudentId() {
         return studentId;
     }
 
@@ -76,5 +81,17 @@ public class Student {
 
     public void setClassInfo(ClassInfo classInfo) {
         this.classInfo = classInfo;
+    }
+
+    public String getNote() {
+        return note.get();
+    }
+
+    public void setNote(String note) {
+        this.note.set(note);
+    }
+
+    public StringProperty noteProperty() {
+        return note;
     }
 }
